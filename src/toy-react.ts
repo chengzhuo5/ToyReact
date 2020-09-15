@@ -32,7 +32,9 @@ class ToyReact {
       // 组件
       const component = new type(attrs)
       component.children = children
-      return component.render()
+      const dom = component.render()
+      component._dom = dom
+      return dom
     }
   }
   static render(el: HTMLElement, container: HTMLElement) {
@@ -41,7 +43,12 @@ class ToyReact {
 }
 export class Component {
   props = Object.create(null);
+  state = Object.create(null);
   children
+  _dom
+  // readonly setState = function() {
+  //   state
+  // }
   constructor(props) {
     this.props = props;
   }

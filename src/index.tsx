@@ -14,10 +14,14 @@ class MyComponent extends Component {
   constructor(props) {
     super(props)
   }
+  state = {
+    content2: 666
+  }
   render() {
     return (
       <div>
         <h2>content的值为：{this.props.content}</h2>
+        <h2>content2的值为：{this.state.content2}</h2>
         <h3>下面是children</h3>
         {this.children}
         <h3>上面是children</h3>
